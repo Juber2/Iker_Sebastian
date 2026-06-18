@@ -8,30 +8,27 @@ let isMusicPlaying = false;
 
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
-    initializeMusic();
+    setupSplashScreen();
     setupEventListeners();
 });
 
-// Inicializar música
-function initializeMusic() {
-    // Intentar reproducir música automáticamente (algunos navegadores pueden bloquearlo)
-    const playPromise = backgroundMusic.play();
-    
-    if (playPromise !== undefined) {
-        playPromise
-            .then(() => {
-                isMusicPlaying = true;
-                updateMusicButtonState();
-            })
-            .catch(() => {
-                // El navegador bloqueó la reproducción automática
-                isMusicPlaying = false;
-                updateMusicButtonState();
-            });
-    }
-    
-    // Establecer volumen inicial
-    backgroundMusic.volume = 0.3;
+// Pantalla de bienvenida
+function setupSplashScreen() {
+    const splashScreen = document.getElementById('splashScreen');
+    const splashBtn = document.getElementById('splashBtn');
+
+    splashBtn.addEventListener('click', () => {
+        backgroundMusic.volume = 0.3;
+        backgroundMusic.play().then(() => {
+            isMusicPlaying = true;
+            updateMusicButtonState();
+        }).catch(() => {
+            isMusicPlaying = false;
+            updateMusicButtonState();
+        });
+
+        splashScreen.classList.add('hide');
+    });
 }
 
 // Configurar listeners de eventos
@@ -99,13 +96,14 @@ function updateMusicButtonState() {
 // Manejar ubicación
 function handleLocation(event) {
     event.preventDefault();
-    document.getElementById('locationModal').style.display = 'block';
+    window.open('https://www.google.com/maps/place/Internet+Le+Forest/@-10.7307974,-73.7537438,90m/data=!3m1!1e3!4m15!1m8!3m7!1s0x910adca9d1a9bd11:0xdec9ffa34d172ce5!2sAtalaya!3b1!8m2!3d-10.7317689!4d-73.7585828!16zL20vMGM4aHR6!3m5!1s0x910adcabf578d9af:0x9fae4b15ae8e2650!8m2!3d-10.7307976!4d-73.7536509!16s%2Fg%2F11c76kf9lb?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D', '_blank');
 }
 
 // Manejar confirmación
 function handleConfirm(event) {
     event.preventDefault();
-    document.getElementById('confirmModal').style.display = 'block';
+    const mensaje = encodeURIComponent('Hola Jhomaira 👋🏻 gracias por la invitación... confirmo mi asistencia al 1er Añito de IKER SEBASTIÁN 🦁🐘🐯 NOS VEMOS EL 27/06/2026 🎂🥳🎁');
+    window.open('https://wa.me/51907089628?text=' + mensaje, '_blank');
 }
 
 // Cerrar modal

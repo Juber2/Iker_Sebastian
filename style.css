@@ -41,6 +41,108 @@ body {
   min-height: 100vh;
 }
 
+/* Pantalla de bienvenida */
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(circle, rgba(210, 165, 50, 0.38) 2.5px, transparent 2.5px),
+    radial-gradient(circle, rgba(210, 165, 50, 0.28) 4px, transparent 4px),
+    radial-gradient(circle, rgba(210, 165, 50, 0.22) 2px, transparent 2px),
+    radial-gradient(circle, rgba(210, 165, 50, 0.32) 3px, transparent 3px),
+    radial-gradient(circle, rgba(210, 165, 50, 0.18) 5px, transparent 5px);
+  background-size:
+    110px 130px,
+    175px 205px,
+    88px 95px,
+    145px 175px,
+    220px 260px;
+  background-position:
+    22px 38px,
+    62px 22px,
+    10px 72px,
+    82px 108px,
+    140px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.splash-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-content {
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.splash-animal {
+  width: 120px;
+  margin-bottom: 0.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.splash-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--green);
+  margin: 0;
+}
+
+.splash-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: var(--gold);
+  font-weight: 400;
+  text-shadow: 1px 2px 6px rgba(201, 151, 43, 0.2);
+  margin: 0;
+}
+
+.splash-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: var(--green);
+  margin: 0.25rem 0 1.2rem;
+}
+
+.splash-btn {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 11px 40px;
+  border-radius: 20px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(84, 124, 63, 0.35);
+  transition: all 0.3s ease;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.splash-btn:hover {
+  background: var(--dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(61, 90, 45, 0.45);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 /* Controles de música */
 .music-controls {
   position: fixed;
