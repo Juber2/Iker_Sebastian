@@ -3,177 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Mis Quince | Invitación</title>
-
-    <!-- Reset básico + estilos -->
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/styleEfect.css" />
-    <link rel="stylesheet" href="./css/mariposas.css" />
-    <link rel="stylesheet" href="./css/contador.css" />
-    <link rel="stylesheet" href="./css/stylemusica.css" />
-
+    <title>Mi Primer Añito - Iker Sebastián</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <!-- =============================
-        CONTENEDOR PRINCIPAL
-  ============================== -->
-    <main class="app">
-    <!-- <div class="butterfly b1" aria-hidden="true">
-        <span class="wing left"></span>
-        <span class="wing right"></span>
-        <span class="body"></span>
-        <span class="antenna a1"></span>
-        <span class="antenna a2"></span>
-    </div> -->
-
-    <!-- <img src="./assets/lazo.png" alt="Logo" class="floating-image" style="width: 20%;"/> -->
- 
-    <div style="display:flex">
-      <img src="./assets/CortinaDerecha.png" alt="Logo" class="floating-image-derecha"/>
-      <img src="./assets/cortinaIzquierda.png" alt="Logo" class="floating-image-izquierda"/> 
+    <!-- Controles de música -->
+    <div class="music-controls">
+      <button id="musicToggle" class="music-btn" title="Encender/Apagar música">
+        🔊
+      </button>
+      <span class="volume-control">
+        <input
+          type="range"
+          id="volumeSlider"
+          min="0"
+          max="100"
+          value="30"
+          class="volume-slider"
+        />
+      </span>
     </div>
-      <!-- ===== PORTADA ===== -->
-      <div class="div-section">
-           <section id="section1" class="section-invitacion" >
-              <img src="./assets/rosas_izquierda.png" alt="Logo" class="rosas_izquierda"/>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-                <p class="letra_quince" style="margin: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MIS <b style="font-size: 70px;">XV</b> AÑOS</p>
-               <!-- <img src="./assets/rosas_derecha.png" alt="Logo" class="rosas_derecha"/>  -->
-              <img src="./assets/corona.png" class="corona"/>
-              <img src="./assets/mariposamovi.gif" class="mariposa" />
-              
-          </section> 
-          <section id="section2" class="section-invitacion2" >
-          <div id="section2"  >
-             <div class="audio-player" id="player">
-                <audio id="audio" preload="auto">
-                  <source src="./assets/musica.mp3" type="audio/mpeg" />
-                </audio>
 
-                <!-- Barra de progreso -->
-                <div class="progress-wrap">
-                  <input id="progress" class="progress" type="range" min="0" max="1000" value="0" />
-                </div>
+    <!-- Audio de fondo -->
+    <audio id="backgroundMusic" loop>
+      <source src="musica-fondo.mp3" type="audio/mpeg" />
+    </audio>
 
-                <!-- Controles -->
-                <div class="controls">
-                  <button class="icon-btn" id="shuffle" aria-label="Shuffle" title="Shuffle">
-                    <!-- shuffle icon -->
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5h-2V6.41l-3.3 3.3a1 1 0 0 1-1.4 0L12 7.41 7.7 11.7a1 1 0 0 1-1.4 0L3 8.41 4.41 7l2.59 2.59L11.3 5.3a1 1 0 0 1 1.4 0l2.3 2.3L17.59 5H16V3Zm5 13v5h-5v-2h1.59l-3.3-3.3a1 1 0 0 1 0-1.4l.3-.3 1.41 1.41-.3.3L19 18.59V17h2Zm-18 1.59L4.41 16l2.59 2.59a1 1 0 0 0 1.4 0L12 15l1.59 1.59-2.3 2.3a3 3 0 0 1-4.24 0L3 17.59Z"/></svg>
-                  </button>
+    <!-- Contenedor principal -->
+    <div class="container">
+      <div class="content">
+        <!-- Hojas superiores -->
+        <img src="images/hojas_arriba.png" alt="" class="hojas-top" />
 
-                  <button class="icon-btn" id="prev" aria-label="Anterior" title="Anterior">
-                    <!-- prev icon -->
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6V6Zm3.5 6 10-7v14l-10-7Z"/></svg>
-                  </button>
+        <!-- Animales decorativos -->
+        <div class="animals-section">
+          <img
+            src="images/jirafa_elefante_leon.png"
+            alt="Animales safari"
+            class="animal-img"
+          />
+        </div>
 
-                  <button class="play-btn" id="play" aria-label="Reproducir / Pausar" title="Play/Pause">
-                    <!-- play/pause icons (se alternan por JS) -->
-                    <svg id="icoPlay" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7L8 5Z"/></svg>
-                    <svg id="icoPause" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M7 6h4v12H7V6Zm6 0h4v12h-4V6Z"/></svg>
-                  </button>
+        <h1 class="main-title">Iker Sebastián</h1>
 
-                  <button class="icon-btn" id="next" aria-label="Siguiente" title="Siguiente">
-                    <!-- next icon -->
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2V6ZM5 19V5l10 7-10 7Z"/></svg>
-                  </button>
-
-                  <button class="icon-btn" id="repeat" aria-label="Repetir" title="Repetir">
-                    <!-- repeat icon -->
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h11l-1.5-1.5L18 4l4 4-4 4-1.5-1.5L18 9H7v4H5V7a2 2 0 0 1 2-2Zm10 10H6l1.5 1.5L6 20l-4-4 4-4 1.5 1.5L6 15h11v-4h2v6a2 2 0 0 1-2 2Z"/></svg>
-                  </button>
-                </div>
-              </div>
-              <img src="./assets/separador2.png" style="width:90%;"/>
-              <br />
-              <div style="padding: 0px 30px;">
-                <p class="letra_quince" style="font-size: 20px;">
-                “Hoy empieza una nueva etapa llena de ilusiones, sueños y nuevas experiencias que marcarán mi camino.”
-              </p>
-              <p class="letra_quince" style="font-size: 20px;">
-                “Con alegría en el corazón, quiero compartir este momento especial con las personas que forman parte de mi historia y me acompañan a crecer.”
-              </p>
-              </div>
-            </br>
-              <img src="./assets/separador2.png" style="width:90%;"/>
-            </br>
-            </br>
-              <img src="./assets/padresMakeila.png" style="width: 100%;"/>
-            </br>
-              <p class="letra_quince" style="font-size: 20px;">
-                Tienen el gusto de invitarle a celebrar los 15 años de su hija el dia.
-              </p>
-
+        <!-- Nombre con ramos a los lados -->
+        <div class="name-section">
+          <div class="ramos-left">
+            <img src="images/ramoGrande.png" alt="" class="ramo-grande" />
+            <img src="images/ramoMediano.png" alt="" class="ramo-mediano" />
+            <img src="images/ramoPequeño.png" alt="" class="ramo-pequeno" />
           </div>
-          <div id="section3" class="section-invitacion2" >
-              <img src="./assets/fechaKince.png" style="width: 90%;"/>
-            </br>
-            </br>
-              <img src="./assets/Calendario.png" style="width: 80%;"/>
-            </br>
-            </br>
-             <div id="countdown" data-target="2026-02-22T17:00:00-05:00">
-              <div class="row">
-                <div class="slot">
-                  <span class="value" data-days>00</span>
-                  <span class="label">DÍAS</span>
-                </div>
 
-                <span class="sep">:</span>
-
-                <div class="slot">
-                  <span class="value" data-hours>00</span>
-                  <span class="label">HORAS</span>
-                </div>
-
-                <span class="sep">:</span>
-
-                <div class="slot">
-                  <span class="value" data-mins>00</span>
-                  <span class="label">MINUTOS</span>
-                </div>
-
-                <span class="sep">:</span>
-
-                <div class="slot">
-                  <span class="value accent" data-secs>00</span>
-                  <span class="label">SEGUNDOS</span>
-                </div>
-              </div>
-            </div>
-            </br>
-            </br>
-              <img src="./assets/separador2.png" style="width:90%;"/>
-            </br>
-          <div class="imgWrap">
-            <img src="./assets/lugaryhora.png" />
-            <a
-              class="zona20"
-              href="https://www.google.com/maps?q=-12.000925064086914,-77.0406494140625&z=17&hl=es"
-              target="_blank">
-            </a>
+          <div class="ramos-right">
+            <img src="images/ramoGrande.png" alt="" class="ramo-grande" />
+            <img src="images/ramoMediano.png" alt="" class="ramo-mediano" />
+            <img src="images/ramoPequeño.png" alt="" class="ramo-pequeno" />
           </div>
-            </br>
-              <img src="./assets/separador2.png" style="width:90%;"/>
-            </br>
-              <img src="./assets/codigoVestimenta.png" style="width: 98%;"/>
-            </br>
-              <img src="./assets/separador2.png" style="width:90%;"/>
-            </br>
-           
-              <img src="./assets/nofaltess.png" style="width: 98%;"/>
+        </div>
+
+        <!-- Texto introductorio -->
+        <div class="intro-text">
+          <p>
+            Hace un año me viste nacer,<br />
+            hace un año me ves crecer y<br />
+            hoy que ha llegado el día quiero compartir<br />
+            con ustedes...
+          </p>
+        </div>
+
+        <!-- Mi Primer Añito -->
+        <div class="celebration-text">
+          <h2>Mi Primer Añito</h2>
+          <span class="celebration-subtitle">Acompáñanos el día</span>
+        </div>
+
+        <!-- Fecha y hora -->
+        <div class="date-time-section">
+          <div class="date-row">
+            <span class="date-label">SÁBADO</span>
+            <div class="date-line"></div>
+            <img src="images/numero_27.png" style="width: 60px" />
+            <div class="date-line"></div>
+            <span class="date-label">JUNIO</span>
           </div>
-          </section>
+          <div class="time-row">Hora: 4:00 pm</div>
+        </div>
+
+        <div class="event-section" style="padding-bottom: 0px">
+          <img src="images/Animales_Carro.png" style="width: 200px" class="pulsa" />
+        </div>
+
+        <!-- Recepción -->
+        <div class="event-section" style="padding-top: 0px">
+          <span class="location">Jirón Pangoa</span>
+          <a href="#" class="btn btn-location" onclick="handleLocation(event)">
+            ver ubicación
+          </a>
+        </div>
+
+        <!-- Confirmar Asistencia -->
+        <div class="event-section">
+          <span class="section-title">Confirmar Asistencia</span>
+          <a href="#" class="btn btn-confirm" onclick="handleConfirm(event)">
+            click aquí
+          </a>
+        </div>
+
+        <!-- Regalo -->
+        <div class="gift-section">
+          <img src="images/regalo.png" style="width: 100px" class="flota" />
+          <p class="gift-text">Regalo o Sobre cerrado</p>
+        </div>
+
+        <!-- Mensaje final -->
+        <div class="closing-message">
+          <p>¡Te esperamos!</p>
+        </div>
+
+        <!-- Hojas decorativas laterales (adorno de fondo, desde abajo) -->
+        <img src="images/hojas_izquierda.png" alt="" class="hoja-lateral-izq" />
+        <img src="images/hojas_derecha.png" alt="" class="hoja-lateral-der" />
+      </div>
     </div>
-    </main>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/scriptMusica.js"></script>
+    <!-- Modal para ubicación -->
+    <div id="locationModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('locationModal')">&times;</span>
+        <h2>Ubicación</h2>
+        <p>Jirón Pangoa</p>
+        <div class="map-placeholder">
+          <p>🗺️ Aquí irá tu mapa (Google Maps, etc.)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para confirmación -->
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('confirmModal')">&times;</span>
+        <h2>Confirmar Asistencia</h2>
+        <form id="confirmForm">
+          <div class="form-group">
+            <input type="text" placeholder="Nombre" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Correo" required />
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Teléfono" required />
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="attendance" required />
+              Confirmo mi asistencia
+            </label>
+          </div>
+          <button type="submit" class="btn btn-confirm">Enviar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
