@@ -68,7 +68,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
 }
 
 .splash-screen.hide {
@@ -93,7 +95,7 @@ body {
 }
 
 .splash-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--green);
@@ -101,7 +103,7 @@ body {
 }
 
 .splash-name {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 3.2rem;
   color: var(--gold);
   font-weight: 400;
@@ -110,7 +112,7 @@ body {
 }
 
 .splash-subtitle {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1rem;
   color: var(--green);
   margin: 0.25rem 0 1.2rem;
@@ -122,7 +124,7 @@ body {
   border: none;
   padding: 11px 40px;
   border-radius: 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 1.5rem;
   font-weight: 700;
   font-style: italic;
@@ -139,8 +141,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* Controles de música */
@@ -274,8 +281,13 @@ body {
 }
 
 @keyframes pulsar {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.12); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
 }
 
 /* Nombre con ramos */
@@ -323,7 +335,7 @@ body {
 }
 .ramo-grande {
   position: absolute;
-  width: 128px;
+  width: 100px;
   height: auto;
   z-index: 99;
   top: 0;
@@ -332,7 +344,7 @@ body {
 
 .ramo-mediano {
   position: absolute;
-  width: 150px;
+  width: 130px;
   height: auto;
   top: 40px;
   left: 8px;
@@ -340,7 +352,7 @@ body {
 
 .ramo-pequeno {
   position: absolute;
-  width: 120px;
+  width: 100px;
   height: auto;
   top: 78px;
   left: 18px;
